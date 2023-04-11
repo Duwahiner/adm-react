@@ -3,31 +3,11 @@ import { TitleProps } from "types/components/title"
 
 import './styles/index.css'
 
-export interface Frutas {
-  name: string,
-}
-
-type Name = string | number | boolean | 'Camilo'
-
 export const Title: FC<TitleProps> = ({ title }) => {
-const frutas: Frutas[] = [{
-  name: '',
-}]
-
-const pruebas = (name:  Name) => {
-  return name
-}
- 
   return (
     <div className="title-container">
       <h1 className="title-title-h1">
         { title ? title : 'Bienvenido' }
-        {frutas.map((fruta) => {
-          return (
-            <span> { fruta.name } </span>
-          )
-        })}
-
       </h1>
     </div>
   )
