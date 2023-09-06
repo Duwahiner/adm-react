@@ -1,14 +1,17 @@
 import { FC } from "react"
+import { useTheme } from 'styled-components'
 
-import './styles/index.css'
 import { ButtonProps } from "types/components/button"
+import { ContainerButton, Button as BT } from "./styled"
 
 export const Button: FC<ButtonProps> = ({ handleClick }) => {
+  const theme = useTheme()
+
   return (
-    <div className="button-container">
-      <button className="button-button-adds" onClick={handleClick}>
+    <ContainerButton className="button-container" >
+      <BT bgColor={theme.colors.primary} className="button-button-adds" onClick={() => handleClick}>
         Agregar
-      </button>
-    </div>
+      </BT>
+    </ContainerButton>
   )
 }
