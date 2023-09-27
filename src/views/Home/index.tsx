@@ -6,6 +6,7 @@ import { Input } from "components/Input"
 import { Title } from "components/Title"
 
 import './styles/index.css'
+import { Render } from "components/Render"
 
 export const Home: FC = () => {
   const [value, setValue] = useState('')
@@ -17,14 +18,16 @@ export const Home: FC = () => {
   }
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    // const target = event.target
-
     console.log(value)
   }
 
   return (
     <div className="home-contaiiner">
       <Title title="Bienvenido a la capacitación de react" />
+      <div className="home-box-render">
+        <Render />
+      </div>
+
       <div className="home-box">
         <Hello message={value} />
         <Input handleChange={handleChange} />
